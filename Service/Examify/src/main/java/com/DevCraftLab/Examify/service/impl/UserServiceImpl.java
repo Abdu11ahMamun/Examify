@@ -30,4 +30,14 @@ public class UserServiceImpl implements UserService {
             return saveUser;
         }
     }
+
+    @Override
+    public User getUser(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
+    @Override
+    public void deleteUser(String username) {
+        return;
+    }
 }
