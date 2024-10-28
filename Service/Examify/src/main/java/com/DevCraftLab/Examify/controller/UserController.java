@@ -19,6 +19,7 @@ public class UserController {
     public User CreateUser(@RequestBody User user) throws Exception {
         Set<UserRole> roles= new HashSet<>();
         Role role = new Role();
+        role.setId(1L);
         role.setRole("NORMAL");
         UserRole userRole= new UserRole();
         userRole.setUser(user);
@@ -29,6 +30,11 @@ public class UserController {
     @GetMapping("/{username}")
     public User getUser(@PathVariable("username") String username){
         return this.userService.getUser(username);
+    }
+
+    @DeleteMapping("/{userId}")
+    public void deleteUser(@PathVariable("userId")Long userId){
+         this.userService.deleteUser(userId);
     }
 
 }
