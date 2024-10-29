@@ -40,4 +40,35 @@ public class UserServiceImpl implements UserService {
     public void deleteUser(Long userId) {
      this.userRepository.deleteById(userId);
     }
+
+    @Override
+    public User updateUser(User user) throws Exception {
+        User existingUser = userRepository.findById(user.getId())
+                .orElseThrow(() -> new Exception("User not found with id: " + user.getId()));
+        if (user.getUsername() != null && !user.getUsername().trim().isEmpty()) {
+            existingUser.setUsername(user.getUsername().trim());
+        }
+        if (user.getFirstName() != null && !user.getFirstName().trim().isEmpty()) {
+            existingUser.setFirstName(user.getFirstName().trim());
+        }
+        if (user.getLastName() != null && !user.getLastName().trim().isEmpty()) {
+            existingUser.setLastName(user.getLastName().trim());
+        }
+        if (user.getEmail() != null && !user.getEmail().trim().isEmpty()) {
+            existingUser.setEmail(user.getEmail().trim());
+        }
+        if (user.getPassword() != null && !user.getPassword().trim().isEmpty()) {
+            existingUser.setPassword(user.getPassword().trim());
+        }
+        if (user.getPhone() != null && !user.getPhone().trim().isEmpty()) {
+            existingUser.setPhone(user.getPhone().trim());
+        }
+        if (user.getImageUrl() != null && !user.getImageUrl().trim().isEmpty()) {
+            existingUser.setImageUrl(user.getImageUrl().trim());
+        }
+        if (user.isActive() != existingUser.isActive()) {
+            existingUser.setActive(user.isActive());
+        }
+        return userRepository.save(existingUser);
+    }
 }
