@@ -2,30 +2,29 @@
   <mat-card>
     <mat-card-header class="center-header">
       <mat-card-title><h1>Sign Up</h1></mat-card-title>
-      {{signupData | json}}
     </mat-card-header>
     <mat-card-content>
       <div class="form-row">
         <mat-form-field appearance="outline" class="custom-input">
           <mat-label>Username</mat-label>
-          <input matInput [(ngModel)]="signupData.username" name="username">
+          <input required matInput [(ngModel)]="signupData.username" name="username">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="custom-input">
           <mat-label>First Name</mat-label>
-          <input matInput [(ngModel)]="signupData.firstName" name="firstName">
+          <input required matInput [(ngModel)]="signupData.firstName" name="firstName">
         </mat-form-field>
       </div>
 
       <div class="form-row">
         <mat-form-field appearance="outline" class="custom-input">
           <mat-label>Last Name</mat-label>
-          <input matInput [(ngModel)]="signupData.lastName" name="lastName">
+          <input required matInput [(ngModel)]="signupData.lastName" name="lastName">
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="custom-input">
           <mat-label>Email</mat-label>
-          <input matInput [(ngModel)]="signupData.email" name="email" required>
+          <input required matInput [(ngModel)]="signupData.email" name="email" required>
         </mat-form-field>
       </div>
 
@@ -37,7 +36,7 @@
 
         <mat-form-field appearance="outline" class="custom-input">
           <mat-label>Phone</mat-label>
-          <input matInput [(ngModel)]="signupData.phone" name="phone">
+          <input required matInput [(ngModel)]="signupData.phone" name="phone">
         </mat-form-field>
       </div>
     </mat-card-content>

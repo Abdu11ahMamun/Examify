@@ -41,3 +41,8 @@ mat-form-field.custom-input input {
 mat-form-field.custom-input input {
   height: 2em;
 }
+
+.error-snackbar {
+  background-color: red !important; 
+  color: white !important;       
+}
