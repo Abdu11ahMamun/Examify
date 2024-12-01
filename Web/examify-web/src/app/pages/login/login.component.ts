@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
   selector: 'app-login',
   standalone: true,
   imports: [
-    
+    CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     MatCardModule,
