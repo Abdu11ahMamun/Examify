@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </button>
+    <span>Examify</span>
+    <span class="example-spacer"></span>
+    <!-- <button mat-icon-button class="example-icon favorite-icon" [routerLink]="['/login']" aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" [routerLink]="['/signup']" aria-label="Example icon-button with share icon">
+      <mat-icon>app_registration</mat-icon>
+    </button> -->
+    <a [routerLink]="'/login'" class="example-link" aria-label="Login link">
+        <button mat-icon-button class="example-icon favorite-icon">
+          <mat-icon>login</mat-icon>
+        </button>
+      </a>
+    
+      <!-- Registration Link -->
+      <a [routerLink]="'/signup'" class="example-link" aria-label="Sign up link">
+        <button mat-icon-button class="example-icon">
+          <mat-icon>app_registration</mat-icon>
+        </button>
+      </a>
+  </mat-toolbar>
+  
