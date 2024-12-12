@@ -8,6 +8,7 @@ class ExamifyApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
